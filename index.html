@@ -1,23 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Meghalaya Jobs Portal</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MeghJobs.in - Meghalaya Jobs Portal</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
 <header>
-    <h1>Meghalaya Jobs Portal</h1>
-    <p>Latest Government Job Notifications</p>
+    <div class="logo">
+        <h1>MeghJobs.in</h1>
+        <p>Meghalaya Government & Private Jobs</p>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Government Jobs</a>
+        <a href="#">Private Jobs</a>
+        <a href="#">Results</a>
+        <a href="#">Admit Cards</a>
+        <a href="#">Scholarships</a>
+    </nav>
 </header>
+
+<section class="hero">
+    <h2>Find Latest Meghalaya Jobs</h2>
+
+    <input type="text"
+           id="searchInput"
+           placeholder="Search jobs...">
+</section>
 
 <div class="container">
 
-    <h2>Latest Jobs</h2>
+    <main>
 
-    <div id="jobs"></div>
+        <section class="category">
+            <h2>Latest Government Jobs</h2>
+
+            <div id="jobs"></div>
+        </section>
+
+        <section class="category">
+            <h2>Results</h2>
+
+            <div id="results">
+                No results available
+            </div>
+        </section>
+
+        <section class="category">
+            <h2>Admit Cards</h2>
+
+            <div id="admitcards">
+                No admit cards available
+            </div>
+        </section>
+
+    </main>
+
+    <aside>
+
+        <div class="sidebar-box">
+            <h3>Recent Updates</h3>
+
+            <ul>
+                <li>Latest Recruitment Notifications</li>
+                <li>Exam Results</li>
+                <li>Admit Card Downloads</li>
+                <li>Scholarship Updates</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-box">
+            <h3>Important Links</h3>
+
+            <ul>
+                <li>Meghalaya PSC</li>
+                <li>NEHU</li>
+                <li>SSB</li>
+                <li>SSC</li>
+            </ul>
+        </div>
+
+    </aside>
 
 </div>
+
+<footer>
+    <p>© 2026 MeghJobs.in | All Rights Reserved</p>
+</footer>
 
 <script src="script.js"></script>
 
