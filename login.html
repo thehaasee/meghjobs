@@ -88,26 +88,12 @@
         .back-link a:hover {
             color: #00A86B;
         }
-        .demo-info {
-            background: #f0f8ff;
-            padding: 15px;
-            border-left: 4px solid #00A86B;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #333;
-        }
     </style>
 </head>
 <body>
     <div class="login-container">
         <div class="login-box">
             <h2>Admin Login</h2>
-            <div class="demo-info">
-                <strong>Demo Credentials:</strong><br>
-                Username: <code>admin</code><br>
-                Password: <code>admin123</code>
-            </div>
             <form id="loginForm">
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -139,8 +125,7 @@
             errorMsg.style.display = 'none';
             successMsg.style.display = 'none';
 
-            if (username === 'admin' && password === 'admin123') {
-                login(username, password);
+            if (login(username, password)) {
                 successMsg.textContent = 'Login successful! Redirecting to dashboard...';
                 successMsg.style.display = 'block';
                 setTimeout(() => {

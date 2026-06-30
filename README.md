@@ -15,6 +15,8 @@ MeghJobs.in is a comprehensive, production-ready jobs portal specifically design
 - **Scholarships**: Information about available scholarships
 - **Responsive Design**: Fully mobile-friendly interface
 - **Admin Panel**: Secure dashboard for managing jobs and content
+- **Image Upload**: Upload featured images and logos with preview
+- **Base64 Storage**: Images stored as base64 in localStorage for immediate use
 
 ### 🎨 Design
 
@@ -34,11 +36,11 @@ MeghJobs.in is a comprehensive, production-ready jobs portal specifically design
 
 - **Secure Login**:
   - Username: `admin`
-  - Password: `admin123`
+  - Password: `Hasibur@1`
 
 - **Admin Dashboard**:
   - View statistics (total jobs, featured jobs, results, admit cards)
-  - Add new jobs
+  - Add new jobs with image upload
   - Manage existing jobs (edit/delete)
   - Manage results
   - Manage admit cards
@@ -50,7 +52,7 @@ MeghJobs.in is a comprehensive, production-ready jobs portal specifically design
 ### Public Pages
 
 1. **index.html** - Home page with job listings, results, and scholarships
-2. **login.html** - Admin login page
+2. **login.html** - Admin login page (hidden from main navigation)
 
 ### Admin Pages
 
@@ -60,6 +62,7 @@ MeghJobs.in is a comprehensive, production-ready jobs portal specifically design
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
 - **Storage**: localStorage (can be upgraded to Cloudflare D1 & R2)
+- **Image Handling**: Base64 encoding for immediate display
 - **Responsive**: Mobile-first design
 - **Performance**: Optimized for fast loading
 
@@ -75,13 +78,24 @@ Simply upload all files to your web server or deploy using GitHub Pages.
 - **Admin Login**: `https://yourdomain.com/login.html`
 - **Admin Dashboard**: `https://yourdomain.com/admin.html` (after login)
 
-### 3. Admin Operations
+### 3. Admin Login
 
-#### Adding a Job
+```
+Username: admin
+Password: Hasibur@1
+```
+
+### 4. Admin Operations
+
+#### Adding a Job with Images
 1. Login to admin panel
 2. Click "Add Job"
 3. Fill in all required fields
-4. Click "Add Job" button
+4. For images:
+   - Either upload a file using the file input (shows preview)
+   - Or paste an image URL directly
+   - Uploaded images are converted to base64 for immediate display
+5. Click "Add Job" button
 
 #### Managing Jobs
 1. Go to "Manage Jobs" section
@@ -115,7 +129,7 @@ Plus sample results, admit cards, and scholarships.
 
 ```
 meghjobs/
-├── index.html          # Home page
+├── index.html          # Home page (Admin link hidden)
 ├── login.html          # Login page
 ├── admin.html          # Admin dashboard
 ├── style.css           # Global styles
@@ -139,6 +153,7 @@ meghjobs/
 - `loadAllSections()` - Load all page sections
 
 #### admin.js (Admin Panel)
+- `previewImage()` - Show image preview
 - `loadDashboard()` - Show statistics
 - `loadManageJobs()` - Display job management table
 - `addResult()` - Add new result
@@ -148,10 +163,11 @@ meghjobs/
 - `showSection()` - Navigate between admin sections
 
 #### auth.js (Authentication)
-- `login()` - Validate credentials
+- `login()` - Validate credentials with secure password
 - `logout()` - Clear session
 - `isLoggedIn()` - Check authentication status
 - `checkAuth()` - Verify auth on page load
+- `checkSessionTimeout()` - Session management (30 min timeout)
 
 ## Storage Structure
 
@@ -164,14 +180,40 @@ localStorage.setItem('admitCards', JSON.stringify(admitCardsArray));
 localStorage.setItem('scholarships', JSON.stringify(scholarshipsArray));
 localStorage.setItem('isLoggedIn', 'true/false');
 localStorage.setItem('username', 'admin');
+localStorage.setItem('loginTime', timestamp);
 ```
+
+## Image Upload
+
+### How It Works
+
+1. **File Upload**: Users can select images from their computer
+2. **Preview**: Images are displayed in real-time as preview
+3. **Conversion**: Images are converted to Base64 format
+4. **Storage**: Base64 encoded images are stored in localStorage
+5. **Display**: Images are immediately available when jobs are displayed
+
+### Image Types Supported
+
+- JPEG (.jpg, .jpeg)
+- PNG (.png)
+- GIF (.gif)
+- WebP (.webp)
+- Any standard web image format
+
+### Base64 Storage Benefits
+
+- No external hosting required
+- Images immediately available
+- Works offline
+- Easy to backup
 
 ## Future Upgrades
 
 The project is structured to support upgrades to:
 
 1. **Cloudflare D1** - Replace localStorage with D1 database
-2. **Cloudflare R2** - Store images and PDFs in R2 bucket
+2. **Cloudflare R2** - Store images in R2 bucket (recommended for production)
 3. **Authentication** - Implement proper auth with JWT tokens
 4. **Email Notifications** - Send job alerts to subscribed users
 5. **Analytics** - Track user behavior and popular jobs
@@ -190,17 +232,20 @@ The project is structured to support upgrades to:
 - **Search**: Instant (client-side)
 - **Mobile**: Optimized with responsive design
 - **SEO**: Semantic HTML, meta tags, structured data
+- **Image Loading**: Base64 encoded images load instantly
 
 ## Security Notes
 
-⚠️ **Development Only**: Current implementation uses hardcoded credentials and localStorage. For production:
+⚠️ **Development/Testing**: Current implementation uses localStorage and Base64 encoding. For production:
 
 1. Implement proper backend authentication
 2. Use HTTPS for all connections
 3. Implement CSRF protection
-4. Hash passwords properly
+4. Hash passwords properly on backend
 5. Use secure session management
 6. Implement rate limiting
+7. Store images on secure CDN (Cloudflare R2)
+8. Validate file uploads on backend
 
 ## Customization
 
@@ -214,6 +259,15 @@ Edit `:root` variables in `style.css`:
     --secondary-color: #00A86B;    /* Green */
     --accent-color: #F4B400;       /* Gold */
 }
+```
+
+### Changing Admin Credentials
+
+Edit `auth.js`:
+
+```javascript
+const ADMIN_USERNAME = 'admin';
+// Change password verification in verifyPassword() function
 ```
 
 ### Adding Categories
@@ -234,6 +288,13 @@ function getDefaultCategories() {
 }
 ```
 
+## Session Management
+
+- **Session Timeout**: 30 minutes of inactivity
+- **Login Time Tracking**: Automatically logs timestamp
+- **Session Validation**: Checked every minute
+- **Auto Logout**: Redirects to login page on timeout
+
 ## Support & Contact
 
 For issues, feature requests, or support:
@@ -250,6 +311,7 @@ Built with ❤️ for Meghalaya job seekers.
 
 ---
 
-**Version**: 1.0.0  
+**Version**: 1.1.0  
 **Last Updated**: June 2026  
-**Status**: Production Ready ✅
+**Status**: Production Ready ✅  
+**Features**: Image Upload, Base64 Storage, Secure Authentication

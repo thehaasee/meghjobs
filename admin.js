@@ -1,3 +1,26 @@
+// Image preview functionality
+function previewImage(input, previewElementId) {
+    const previewContainer = document.getElementById(previewElementId);
+    previewContainer.innerHTML = '';
+    
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.className = 'image-preview';
+            previewContainer.appendChild(img);
+            
+            // Convert to base64 and store in the corresponding URL field
+            const fieldId = input.id.replace('File', '');
+            document.getElementById(fieldId).value = e.target.result;
+        };
+        
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
 // Check authentication on page load
 window.addEventListener('load', function() {
     if (!isLoggedIn()) {
@@ -65,8 +88,8 @@ document.getElementById('addJobForm')?.addEventListener('submit', function(e) {
         applyLink: document.getElementById('applyLink').value,
         officialWebsite: document.getElementById('officialWebsite').value,
         notificationPDF: document.getElementById('notificationPDF').value,
-        featuredImage: document.getElementById('featuredImage').value,
-        departmentLogo: document.getElementById('departmentLogo').value,
+        featuredImage: document.getElementById('featuredImage').value || document.getElementById('featuredImageFile').value,
+        departmentLogo: document.getElementById('departmentLogo').value || document.getElementById('departmentLogoFile').value,
         isFeatured: document.getElementById('isFeatured').value === 'true'
     };
 
@@ -84,6 +107,8 @@ document.getElementById('addJobForm')?.addEventListener('submit', function(e) {
     }, 3000);
 
     this.reset();
+    document.getElementById('featuredImagePreview').innerHTML = '';
+    document.getElementById('departmentLogoPreview').innerHTML = '';
     loadDashboard();
 });
 
@@ -473,5 +498,5 @@ function deleteCategory(categoryName) {
 // Logout
 function handleLogout() {
     logout();
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
 }
