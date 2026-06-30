@@ -4,7 +4,11 @@
     <title>Admin Panel - MeghJobs</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body><script>
+if(localStorage.getItem("loggedIn")!=="true"){
+window.location.href="login.html";
+}
+</script>
 
 <header>
     <h1>MeghJobs Admin Panel</h1>
