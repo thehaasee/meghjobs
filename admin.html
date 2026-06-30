@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel - MeghJobs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>MeghJobs Admin Panel</h1>
+</header>
+
+<div class="container">
+    <h2>Add New Job</h2>
+
+    <input type="text" id="title" placeholder="Job Title"><br><br>
+
+    <input type="text" id="department" placeholder="Department"><br><br>
+
+    <input type="date" id="lastdate"><br><br>
+
+    <button class="btn" onclick="addJob()">Add Job</button>
+
+    <hr>
+
+    <div id="joblist"></div>
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>
