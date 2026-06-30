@@ -1,103 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MeghJobs.in - Meghalaya Jobs Portal</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MeghJobs.in - Meghalaya's Premier Jobs Portal. Find Government, Private, Central Jobs and Admit Cards.">
+    <meta name="keywords" content="Meghalaya jobs, Government jobs, Central jobs, Private jobs, Admit cards, Results">
+    <meta name="author" content="MeghJobs.in">
+    <title>MeghJobs.in - Meghalaya Jobs Portal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1 class="logo">MeghJobs<span>.in</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#latest-jobs">Latest Jobs</a></li>
+                <li><a href="#featured-jobs">Featured</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#admit-cards">Admit Cards</a></li>
+                <li><a href="#scholarships">Scholarships</a></li>
+            </ul>
+            <div class="admin-link">
+                <a href="login.html" class="btn-admin">Admin Panel</a>
+            </div>
+        </div>
+    </nav>
 
-<header>
-    <div class="logo">
-        <h1>MeghJobs.in</h1>
-        <p>Meghalaya Government & Private Jobs</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Find Your Dream Job in Meghalaya</h2>
+                <p>Discover Government, Central, and Private Job Opportunities</p>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search by job title, department..." class="search-input">
+                    <button class="search-btn" onclick="searchJobs()">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container main-layout">
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Latest Jobs Section -->
+            <section id="latest-jobs" class="jobs-section">
+                <h2 class="section-title">Latest Jobs</h2>
+                <div id="latestJobsList" class="jobs-grid">
+                    <!-- Jobs will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Featured Jobs Section -->
+            <section id="featured-jobs" class="jobs-section">
+                <h2 class="section-title">Featured Jobs</h2>
+                <div id="featuredJobsList" class="jobs-grid">
+                    <!-- Featured jobs will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Government Jobs Section -->
+            <section class="jobs-section">
+                <h2 class="section-title">Meghalaya Government Jobs</h2>
+                <div id="meghalayaGovJobs" class="jobs-grid">
+                    <!-- Government jobs will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Central Government Jobs Section -->
+            <section class="jobs-section">
+                <h2 class="section-title">Central Government Jobs</h2>
+                <div id="centralGovJobs" class="jobs-grid">
+                    <!-- Central jobs will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Private Jobs Section -->
+            <section class="jobs-section">
+                <h2 class="section-title">Private Jobs</h2>
+                <div id="privateJobs" class="jobs-grid">
+                    <!-- Private jobs will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="notification-section">
+                <h2 class="section-title">Results</h2>
+                <div id="resultsList" class="notification-list">
+                    <!-- Results will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Admit Cards Section -->
+            <section id="admit-cards" class="notification-section">
+                <h2 class="section-title">Admit Cards</h2>
+                <div id="admitCardsList" class="notification-list">
+                    <!-- Admit cards will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Scholarships Section -->
+            <section id="scholarships" class="notification-section">
+                <h2 class="section-title">Scholarships</h2>
+                <div id="scholarshipsList" class="notification-list">
+                    <!-- Scholarships will be loaded here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Category Filter -->
+            <div class="sidebar-widget">
+                <h3>Job Categories</h3>
+                <ul class="category-list">
+                    <li><a href="#" onclick="filterByCategory('Meghalaya Government'); return false;">Meghalaya Government</a></li>
+                    <li><a href="#" onclick="filterByCategory('Central Government'); return false;">Central Government</a></li>
+                    <li><a href="#" onclick="filterByCategory('Private'); return false;">Private</a></li>
+                    <li><a href="#" onclick="filterByCategory('Banking'); return false;">Banking</a></li>
+                    <li><a href="#" onclick="filterByCategory('SSC'); return false;">SSC</a></li>
+                    <li><a href="#" onclick="filterByCategory('Railways'); return false;">Railways</a></li>
+                </ul>
+            </div>
+
+            <!-- Important Links -->
+            <div class="sidebar-widget">
+                <h3>Important Links</h3>
+                <ul class="important-links">
+                    <li><a href="#" target="_blank">Meghalaya MSTC</a></li>
+                    <li><a href="#" target="_blank">SSC Official</a></li>
+                    <li><a href="#" target="_blank">UPSC Jobs</a></li>
+                    <li><a href="#" target="_blank">Railway Recruitment</a></li>
+                    <li><a href="#" target="_blank">Bank Jobs</a></li>
+                </ul>
+            </div>
+
+            <!-- Recent Updates -->
+            <div class="sidebar-widget">
+                <h3>Recent Updates</h3>
+                <div class="updates-list">
+                    <div class="update-item">
+                        <span class="update-date">Today</span>
+                        <p>New results published for MSTC Exam 2026</p>
+                    </div>
+                    <div class="update-item">
+                        <span class="update-date">Yesterday</span>
+                        <p>Admit cards released for Civil Service Exam</p>
+                    </div>
+                    <div class="update-item">
+                        <span class="update-date">2 days ago</span>
+                        <p>New scholarship applications open for students</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
     </div>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Government Jobs</a>
-        <a href="#">Private Jobs</a>
-        <a href="#">Results</a>
-        <a href="#">Admit Cards</a>
-        <a href="#">Scholarships</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <h2>Find Latest Meghalaya Jobs</h2>
-
-    <input type="text"
-           id="searchInput"
-           placeholder="Search jobs...">
-</section>
-
-<div class="container">
-
-    <main>
-
-        <section class="category">
-            <h2>Latest Government Jobs</h2>
-
-            <div id="jobs"></div>
-        </section>
-
-        <section class="category">
-            <h2>Results</h2>
-
-            <div id="results">
-                No results available
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About MeghJobs.in</h4>
+                    <p>Your trusted source for all job opportunities in Meghalaya. We provide timely updates on government, central, and private sector jobs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Latest Jobs</a></li>
+                        <li><a href="#">Results</a></li>
+                        <li><a href="#">Admit Cards</a></li>
+                        <li><a href="#">Scholarships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Government Jobs</a></li>
+                        <li><a href="#">Central Jobs</a></li>
+                        <li><a href="#">Private Jobs</a></li>
+                        <li><a href="#">SSC Jobs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@meghjobs.in</p>
+                    <p>Phone: +91 XXXXX XXXXX</p>
+                    <p>Meghalaya, India</p>
+                </div>
             </div>
-        </section>
-
-        <section class="category">
-            <h2>Admit Cards</h2>
-
-            <div id="admitcards">
-                No admit cards available
+            <div class="footer-bottom">
+                <p>&copy; 2026 MeghJobs.in. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
             </div>
-        </section>
-
-    </main>
-
-    <aside>
-
-        <div class="sidebar-box">
-            <h3>Recent Updates</h3>
-
-            <ul>
-                <li>Latest Recruitment Notifications</li>
-                <li>Exam Results</li>
-                <li>Admit Card Downloads</li>
-                <li>Scholarship Updates</li>
-            </ul>
         </div>
+    </footer>
 
-        <div class="sidebar-box">
-            <h3>Important Links</h3>
-
-            <ul>
-                <li>Meghalaya PSC</li>
-                <li>NEHU</li>
-                <li>SSB</li>
-                <li>SSC</li>
-            </ul>
-        </div>
-
-    </aside>
-
-</div>
-
-<footer>
-    <p>© 2026 MeghJobs.in | All Rights Reserved</p>
-</footer>
-
-<script src="script.js"></script>
-
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

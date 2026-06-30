@@ -1,29 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Admin Login - MeghJobs</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - MeghJobs.in</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0A2342 0%, #00A86B 100%);
+        }
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-box h2 {
+            text-align: center;
+            color: #0A2342;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            color: #0A2342;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #00A86B;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #0A2342 0%, #00A86B 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .login-btn:hover {
+            transform: translateY(-2px);
+        }
+        .error-message {
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 15px;
+            display: none;
+        }
+        .success-message {
+            color: #27ae60;
+            text-align: center;
+            margin-top: 15px;
+            display: none;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-link a {
+            color: #0A2342;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link a:hover {
+            color: #00A86B;
+        }
+        .demo-info {
+            background: #f0f8ff;
+            padding: 15px;
+            border-left: 4px solid #00A86B;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Admin Login</h2>
+            <div class="demo-info">
+                <strong>Demo Credentials:</strong><br>
+                Username: <code>admin</code><br>
+                Password: <code>admin123</code>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <div class="error-message" id="errorMessage"></div>
+                <div class="success-message" id="successMessage"></div>
+            </form>
+            <div class="back-link">
+                <a href="index.html">← Back to Home</a>
+            </div>
+        </div>
+    </div>
 
-<div style="max-width:400px;margin:100px auto;background:#fff;padding:30px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,.1);">
+    <script src="auth.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('errorMessage');
+            const successMsg = document.getElementById('successMessage');
 
-<h2 style="text-align:center;">Admin Login</h2>
+            errorMsg.style.display = 'none';
+            successMsg.style.display = 'none';
 
-<input type="text" id="username" placeholder="Username"
-style="width:100%;padding:12px;margin:10px 0;">
-
-<input type="password" id="password" placeholder="Password"
-style="width:100%;padding:12px;margin:10px 0;">
-
-<button onclick="login()"
-style="width:100%;padding:12px;background:#00A86B;color:white;border:none;border-radius:5px;">
-Login
-</button>
-
-</div>
-
-<script src="auth.js"></script>
-
+            if (username === 'admin' && password === 'admin123') {
+                login(username, password);
+                successMsg.textContent = 'Login successful! Redirecting to dashboard...';
+                successMsg.style.display = 'block';
+                setTimeout(() => {
+                    window.location.href = 'admin.html';
+                }, 1500);
+            } else {
+                errorMsg.textContent = 'Invalid username or password';
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
