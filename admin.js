@@ -47,3 +47,10 @@ function displayJobs(){
 }
 
 displayJobs();
+function logout(){
+
+localStorage.removeItem("loggedIn");
+
+window.location.href="login.html";
+
+}
