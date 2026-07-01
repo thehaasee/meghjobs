@@ -7,6 +7,7 @@
     <meta name="keywords" content="Meghalaya jobs, Government jobs, Central jobs, Private jobs, Admit cards, Results">
     <meta name="author" content="MeghJobs.in">
     <title>MeghJobs.in - Meghalaya Jobs Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,27 +15,69 @@
     <nav class="navbar">
         <div class="container">
             <div class="navbar-brand">
-                <h1 class="logo">MeghJobs<span>.in</span></h1>
+                <h1 class="logo"><i class="fas fa-briefcase"></i> MeghJobs<span>.in</span></h1>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#latest-jobs">Latest Jobs</a></li>
-                <li><a href="#featured-jobs">Featured</a></li>
-                <li><a href="#results">Results</a></li>
-                <li><a href="#admit-cards">Admit Cards</a></li>
-                <li><a href="#scholarships">Scholarships</a></li>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#latest-jobs"><i class="fas fa-fire"></i> Latest</a></li>
+                <li><a href="#featured-jobs"><i class="fas fa-star"></i> Featured</a></li>
+                <li><a href="#results"><i class="fas fa-clipboard-check"></i> Results</a></li>
+                <li><a href="#admit-cards"><i class="fas fa-ticket-alt"></i> Admit Cards</a></li>
+                <li><a href="#scholarships"><i class="fas fa-graduation-cap"></i> Scholarships</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- Quick Stats Bar -->
+    <div class="quick-stats">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-icon jobs-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>Active Jobs</h3>
+                    <p id="totalJobs">10+</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon results-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>Results Released</h3>
+                    <p>Latest Updates</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon admit-icon">
+                    <i class="fas fa-ticket-alt"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>Admit Cards</h3>
+                    <p>Download Now</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon scholarship-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>Scholarships</h3>
+                    <p>Apply Today</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Find Your Dream Job in Meghalaya</h2>
+                <h2><i class="fas fa-rocket"></i> Find Your Dream Job in Meghalaya</h2>
                 <p>Discover Government, Central, and Private Job Opportunities</p>
                 <div class="search-bar">
-                    <input type="text" id="searchInput" placeholder="Search by job title, department..." class="search-input">
+                    <input type="text" id="searchInput" placeholder="🔍 Search by job title, department..." class="search-input">
                     <button class="search-btn" onclick="searchJobs()">Search</button>
                 </div>
             </div>
@@ -44,25 +87,32 @@
     <div class="container main-layout">
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Latest Jobs Section -->
-            <section id="latest-jobs" class="jobs-section">
-                <h2 class="section-title">Latest Jobs</h2>
-                <div id="latestJobsList" class="jobs-grid">
-                    <!-- Jobs will be loaded here -->
-                </div>
-            </section>
-
             <!-- Featured Jobs Section -->
-            <section id="featured-jobs" class="jobs-section">
-                <h2 class="section-title">Featured Jobs</h2>
+            <section id="featured-jobs" class="jobs-section featured-section">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-star"></i> Featured Jobs (⭐ Best Opportunities)</h2>
+                    <span class="section-badge">Top Priority</span>
+                </div>
                 <div id="featuredJobsList" class="jobs-grid">
                     <!-- Featured jobs will be loaded here -->
                 </div>
             </section>
 
+            <!-- Latest Jobs Section -->
+            <section id="latest-jobs" class="jobs-section">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-fire"></i> Latest Jobs (Recently Posted)</h2>
+                </div>
+                <div id="latestJobsList" class="jobs-grid">
+                    <!-- Jobs will be loaded here -->
+                </div>
+            </section>
+
             <!-- Government Jobs Section -->
             <section class="jobs-section">
-                <h2 class="section-title">Meghalaya Government Jobs</h2>
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-building"></i> Meghalaya Government Jobs</h2>
+                </div>
                 <div id="meghalayaGovJobs" class="jobs-grid">
                     <!-- Government jobs will be loaded here -->
                 </div>
@@ -70,7 +120,9 @@
 
             <!-- Central Government Jobs Section -->
             <section class="jobs-section">
-                <h2 class="section-title">Central Government Jobs</h2>
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-landmark"></i> Central Government Jobs</h2>
+                </div>
                 <div id="centralGovJobs" class="jobs-grid">
                     <!-- Central jobs will be loaded here -->
                 </div>
@@ -78,32 +130,40 @@
 
             <!-- Private Jobs Section -->
             <section class="jobs-section">
-                <h2 class="section-title">Private Jobs</h2>
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-industry"></i> Private Sector Jobs</h2>
+                </div>
                 <div id="privateJobs" class="jobs-grid">
                     <!-- Private jobs will be loaded here -->
                 </div>
             </section>
 
             <!-- Results Section -->
-            <section id="results" class="notification-section">
-                <h2 class="section-title">Results</h2>
-                <div id="resultsList" class="notification-list">
+            <section id="results" class="notification-section results-section">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-clipboard-check"></i> Exam Results (Check Your Score)</h2>
+                </div>
+                <div id="resultsList" class="notification-list results-list">
                     <!-- Results will be loaded here -->
                 </div>
             </section>
 
             <!-- Admit Cards Section -->
-            <section id="admit-cards" class="notification-section">
-                <h2 class="section-title">Admit Cards</h2>
-                <div id="admitCardsList" class="notification-list">
+            <section id="admit-cards" class="notification-section admit-section">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-ticket-alt"></i> Admit Cards (Download & Print)</h2>
+                </div>
+                <div id="admitCardsList" class="notification-list admit-list">
                     <!-- Admit cards will be loaded here -->
                 </div>
             </section>
 
             <!-- Scholarships Section -->
-            <section id="scholarships" class="notification-section">
-                <h2 class="section-title">Scholarships</h2>
-                <div id="scholarshipsList" class="notification-list">
+            <section id="scholarships" class="notification-section scholarship-section">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Scholarships (Financial Aid)</h2>
+                </div>
+                <div id="scholarshipsList" class="notification-list scholarship-list">
                     <!-- Scholarships will be loaded here -->
                 </div>
             </section>
@@ -111,45 +171,68 @@
 
         <!-- Sidebar -->
         <aside class="sidebar">
+            <!-- Quick Access -->
+            <div class="sidebar-widget quick-access">
+                <h3><i class="fas fa-bolt"></i> Quick Access</h3>
+                <div class="quick-buttons">
+                    <a href="#featured-jobs" class="quick-btn featured-btn">
+                        <i class="fas fa-star"></i>
+                        <span>Featured Jobs</span>
+                    </a>
+                    <a href="#results" class="quick-btn results-btn">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Results</span>
+                    </a>
+                    <a href="#admit-cards" class="quick-btn admit-btn">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>Admit Cards</span>
+                    </a>
+                    <a href="#scholarships" class="quick-btn scholarship-btn">
+                        <i class="fas fa-award"></i>
+                        <span>Scholarships</span>
+                    </a>
+                </div>
+            </div>
+
             <!-- Category Filter -->
             <div class="sidebar-widget">
-                <h3>Job Categories</h3>
+                <h3><i class="fas fa-filter"></i> Job Categories</h3>
                 <ul class="category-list">
-                    <li><a href="#" onclick="filterByCategory('Meghalaya Government'); return false;">Meghalaya Government</a></li>
-                    <li><a href="#" onclick="filterByCategory('Central Government'); return false;">Central Government</a></li>
-                    <li><a href="#" onclick="filterByCategory('Private'); return false;">Private</a></li>
-                    <li><a href="#" onclick="filterByCategory('Banking'); return false;">Banking</a></li>
-                    <li><a href="#" onclick="filterByCategory('SSC'); return false;">SSC</a></li>
-                    <li><a href="#" onclick="filterByCategory('Railways'); return false;">Railways</a></li>
+                    <li><a href="#" onclick="filterByCategory('Meghalaya Government'); return false;"><i class="fas fa-check"></i> Meghalaya Government</a></li>
+                    <li><a href="#" onclick="filterByCategory('Central Government'); return false;"><i class="fas fa-check"></i> Central Government</a></li>
+                    <li><a href="#" onclick="filterByCategory('Private'); return false;"><i class="fas fa-check"></i> Private</a></li>
+                    <li><a href="#" onclick="filterByCategory('Banking'); return false;"><i class="fas fa-check"></i> Banking</a></li>
+                    <li><a href="#" onclick="filterByCategory('SSC'); return false;"><i class="fas fa-check"></i> SSC</a></li>
+                    <li><a href="#" onclick="filterByCategory('Railways'); return false;"><i class="fas fa-check"></i> Railways</a></li>
                 </ul>
             </div>
 
             <!-- Important Links -->
             <div class="sidebar-widget">
-                <h3>Important Links</h3>
+                <h3><i class="fas fa-link"></i> Important Links</h3>
                 <ul class="important-links">
-                    <li><a href="#" target="_blank">Meghalaya MSTC</a></li>
-                    <li><a href="#" target="_blank">SSC Official</a></li>
-                    <li><a href="#" target="_blank">UPSC Jobs</a></li>
-                    <li><a href="#" target="_blank">Railway Recruitment</a></li>
-                    <li><a href="#" target="_blank">Bank Jobs</a></li>
+                    <li><a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Meghalaya MSTC</a></li>
+                    <li><a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> SSC Official</a></li>
+                    <li><a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> UPSC Jobs</a></li>
+                    <li><a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Railway Recruitment</a></li>
+                    <li><a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Bank Jobs</a></li>
                 </ul>
             </div>
 
             <!-- Recent Updates -->
             <div class="sidebar-widget">
-                <h3>Recent Updates</h3>
+                <h3><i class="fas fa-bell"></i> Recent Updates</h3>
                 <div class="updates-list">
-                    <div class="update-item">
-                        <span class="update-date">Today</span>
+                    <div class="update-item important">
+                        <span class="update-date">🔔 Today</span>
                         <p>New results published for MSTC Exam 2026</p>
                     </div>
                     <div class="update-item">
-                        <span class="update-date">Yesterday</span>
+                        <span class="update-date">📋 Yesterday</span>
                         <p>Admit cards released for Civil Service Exam</p>
                     </div>
                     <div class="update-item">
-                        <span class="update-date">2 days ago</span>
+                        <span class="update-date">💰 2 days ago</span>
                         <p>New scholarship applications open for students</p>
                     </div>
                 </div>
@@ -172,20 +255,20 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>About MeghJobs.in</h4>
+                    <h4><i class="fas fa-info-circle"></i> About MeghJobs.in</h4>
                     <p>Your trusted source for all job opportunities in Meghalaya. We provide timely updates on government, central, and private sector jobs.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
                     <ul>
-                        <li><a href="#">Latest Jobs</a></li>
-                        <li><a href="#">Results</a></li>
-                        <li><a href="#">Admit Cards</a></li>
-                        <li><a href="#">Scholarships</a></li>
+                        <li><a href="#latest-jobs">Latest Jobs</a></li>
+                        <li><a href="#results">Results</a></li>
+                        <li><a href="#admit-cards">Admit Cards</a></li>
+                        <li><a href="#scholarships">Scholarships</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Categories</h4>
+                    <h4><i class="fas fa-briefcase"></i> Categories</h4>
                     <ul>
                         <li><a href="#">Government Jobs</a></li>
                         <li><a href="#">Central Jobs</a></li>
@@ -194,10 +277,10 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: info@meghjobs.in</p>
-                    <p>Phone: +91 XXXXX XXXXX</p>
-                    <p>Meghalaya, India</p>
+                    <h4><i class="fas fa-phone"></i> Contact</h4>
+                    <p><i class="fas fa-envelope"></i> info@meghjobs.in</p>
+                    <p><i class="fas fa-mobile-alt"></i> +91 XXXXX XXXXX</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Meghalaya, India</p>
                 </div>
             </div>
             <div class="footer-bottom">
