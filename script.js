@@ -2,6 +2,56 @@
 const sampleJobs = [
     {
         id: 1,
+        title: "Research Associate (Contractual)",
+        department: "Directorate of Employment & Craftsmen Training (DECT), Meghalaya",
+        category: "Meghalaya Government",
+        advNo: "DECT/2025/001",
+        vacancies: 2,
+        qualification: "Master's Degree in any subject (60% marks, 55% for SC/ST)",
+        ageLimit: "18-32 Years (5-year relaxation for SC/ST)",
+        salary: "₹35,000 per month",
+        lastDate: "2026-07-11",
+        applyLink: "https://dectmeg.nic.in",
+        officialWebsite: "https://dectmeg.nic.in",
+        notificationPDF: "https://dectmeg.nic.in/news/attachment/70",
+        featuredImage: "https://via.placeholder.com/400x200?text=Research+Associate",
+        departmentLogo: "https://via.placeholder.com/80x80?text=DECT",
+        isFeatured: true,
+        description: "The Directorate of Employment and Craftsmen Training (DECT), Meghalaya is hiring Research Associates on contractual basis for a 6-month position (extendable). This is an excellent opportunity for researchers and academics to contribute to government initiatives.",
+        eligibility: "Master's degree in any subject from a recognized university with 60% marks (55% for SC/ST). Preference given to Ph.D. holders. Minimum 3 years research or relevant work experience required.",
+        selectionProcess: "Shortlisting based on eligibility criteria followed by interview. Original certificates must be produced at interview. No TA/DA provided.",
+        examDate: "2026-08-05",
+        resultDate: "2026-08-20",
+        keyRequirements: "Research methodologies knowledge, statistical software proficiency (SPSS/STATA), data visualization skills, report writing, MS Office proficiency, fieldwork coordination ability, and analytical thinking.",
+        applicationMode: "Online via Google Form - All supporting documents required in single PDF file (less than 1MB)"
+    },
+    {
+        id: 2,
+        title: "Technical Officer / Training Officer",
+        department: "Directorate of Employment & Craftsmen Training (DECT), Meghalaya",
+        category: "Meghalaya Government",
+        advNo: "DECT/2025/002",
+        vacancies: 1,
+        qualification: "B.Voc/B.Sc (Ag)/B.Tech (Ag) or Diploma (2 years) or NTC/NAC in relevant field",
+        ageLimit: "18-32 Years (SC/ST relaxation as per rules)",
+        salary: "As per project guidelines",
+        lastDate: "2026-10-21",
+        applyLink: "https://dectmeg.nic.in",
+        officialWebsite: "https://dectmeg.nic.in",
+        notificationPDF: "https://dectmeg.nic.in/news/attachment/70",
+        featuredImage: "https://via.placeholder.com/400x200?text=Technical+Officer",
+        departmentLogo: "https://via.placeholder.com/80x80?text=DECT",
+        isFeatured: true,
+        description: "Recruitment for Technical Officer/Training Officer position on contractual basis (1 year, extendable) under Supporting Human Capital Development in Meghalaya Phase II project. Ideal for technical professionals with training background.",
+        eligibility: "Bachelor degree holders (B.Voc/B.Sc Ag/B.Tech Ag): 1 year experience required. Diploma holders: 2 years experience. NTC/NAC holders: 3 years experience in relevant field. All qualifications must be from AICTE/UGC recognized institutions.",
+        selectionProcess: "Screening of applications followed by interview. Original certificates required, no TA/DA provided. Local candidates from Meghalaya preferred.",
+        examDate: "2026-11-10",
+        resultDate: "2026-11-25",
+        keyRequirements: "Knowledge of training delivery, technical skills in agriculture/vocational sector, field experience, communication skills, training coordination, and commitment to skill development.",
+        applicationMode: "Online via Google Form - All supporting documents in single PDF file (less than 1MB). Application link provided in official notification."
+    },
+    {
+        id: 3,
         title: "Assistant Manager (Finance)",
         department: "Meghalaya State Civil Service",
         category: "Meghalaya Government",
@@ -16,7 +66,7 @@ const sampleJobs = [
         notificationPDF: "https://example.com/notification.pdf",
         featuredImage: "https://via.placeholder.com/400x200?text=Assistant+Manager+Finance",
         departmentLogo: "https://via.placeholder.com/80x80?text=MSTC",
-        isFeatured: true,
+        isFeatured: false,
         description: "Assistant Manager (Finance) position in Meghalaya State Civil Service. Candidates with Bachelor's degree in Commerce or Business Administration are invited to apply.",
         eligibility: "Bachelor's degree in any stream, Age between 21-35 years",
         selectionProcess: "Written Test followed by Interview",
@@ -24,30 +74,7 @@ const sampleJobs = [
         resultDate: "2026-09-10"
     },
     {
-        id: 2,
-        title: "Research Officer",
-        department: "Meghalaya State Institute of Rural Development",
-        category: "Meghalaya Government",
-        advNo: "MSIRD/2026/002",
-        vacancies: 8,
-        qualification: "Master's in Economics/Sociology",
-        ageLimit: "23-40 Years",
-        salary: "₹45,000 - ₹75,000",
-        lastDate: "2026-07-25",
-        applyLink: "https://example.com/apply",
-        officialWebsite: "https://meghalaya.gov.in",
-        notificationPDF: "https://example.com/notification.pdf",
-        featuredImage: "https://via.placeholder.com/400x200?text=Research+Officer",
-        departmentLogo: "https://via.placeholder.com/80x80?text=MSIRD",
-        isFeatured: true,
-        description: "Research Officer position for research and policy development in rural areas of Meghalaya.",
-        eligibility: "Master's degree in Economics, Sociology, or related field",
-        selectionProcess: "Merit-based selection through interview",
-        examDate: "2026-08-20",
-        resultDate: "2026-09-05"
-    },
-    {
-        id: 3,
+        id: 4,
         title: "SSC Combined Graduate Level (CGL) Exam",
         department: "Staff Selection Commission",
         category: "SSC",
@@ -62,7 +89,7 @@ const sampleJobs = [
         notificationPDF: "https://example.com/notification.pdf",
         featuredImage: "https://via.placeholder.com/400x200?text=SSC+CGL+Exam",
         departmentLogo: "https://via.placeholder.com/80x80?text=SSC",
-        isFeatured: true,
+        isFeatured: false,
         description: "SSC Combined Graduate Level Examination for recruitment to various posts in different government departments.",
         eligibility: "Bachelor's degree or equivalent qualification",
         selectionProcess: "Tier I (CBT), Tier II (CBT), Tier III (Descriptive), Tier IV (Skill/Computer test)",
@@ -70,7 +97,7 @@ const sampleJobs = [
         resultDate: "2026-11-15"
     },
     {
-        id: 4,
+        id: 5,
         title: "Central Bank Recruitment - Probationary Officers",
         department: "Reserve Bank of India",
         category: "Central Government",
@@ -93,7 +120,7 @@ const sampleJobs = [
         resultDate: "2026-11-20"
     },
     {
-        id: 5,
+        id: 6,
         title: "Software Developer (Private)",
         department: "Tech Solutions Pvt Ltd",
         category: "Private",
@@ -116,7 +143,7 @@ const sampleJobs = [
         resultDate: "2026-08-12"
     },
     {
-        id: 6,
+        id: 7,
         title: "Railway Recruitment - Technician Grade",
         department: "Indian Railways",
         category: "Railways",
@@ -139,7 +166,7 @@ const sampleJobs = [
         resultDate: "2026-10-30"
     },
     {
-        id: 7,
+        id: 8,
         title: "Bank Clerk Recruitment",
         department: "State Bank of India",
         category: "Banking",
@@ -154,7 +181,7 @@ const sampleJobs = [
         notificationPDF: "https://example.com/notification.pdf",
         featuredImage: "https://via.placeholder.com/400x200?text=Bank+Clerk",
         departmentLogo: "https://via.placeholder.com/80x80?text=SBI",
-        isFeatured: true,
+        isFeatured: false,
         description: "State Bank of India is recruiting Bank Clerks across all their branches including Meghalaya region.",
         eligibility: "12th Pass from recognized board, Age between 20-28 years",
         selectionProcess: "Preliminary Exam, Main Exam, and Language Test",
@@ -162,7 +189,7 @@ const sampleJobs = [
         resultDate: "2026-10-15"
     },
     {
-        id: 8,
+        id: 9,
         title: "UPSC Civil Services Examination",
         department: "Union Public Service Commission",
         category: "Central Government",
@@ -183,29 +210,6 @@ const sampleJobs = [
         selectionProcess: "Preliminary Examination, Main Examination (9 papers), Interview",
         examDate: "2026-10-02",
         resultDate: "2027-05-20"
-    },
-    {
-        id: 9,
-        title: "Market Research Analyst",
-        department: "Business Analytics Corp",
-        category: "Private",
-        advNo: "BAC/MRA/2026/001",
-        vacancies: 12,
-        qualification: "Master's in Business/Marketing",
-        ageLimit: "22-32 Years",
-        salary: "₹35,000 - ₹60,000",
-        lastDate: "2026-07-28",
-        applyLink: "https://bac.com/careers",
-        officialWebsite: "https://bac.com",
-        notificationPDF: "https://example.com/notification.pdf",
-        featuredImage: "https://via.placeholder.com/400x200?text=Market+Research",
-        departmentLogo: "https://via.placeholder.com/80x80?text=BAC",
-        isFeatured: false,
-        description: "Business Analytics Corp seeks Market Research Analysts to conduct market studies and analysis.",
-        eligibility: "Master's in Business Administration, Marketing, or Economics with 2+ years experience",
-        selectionProcess: "Written Test, Case Study Analysis, Interview",
-        examDate: "2026-08-10",
-        resultDate: "2026-08-20"
     },
     {
         id: 10,
@@ -236,15 +240,15 @@ const sampleJobs = [
 const sampleResults = [
     {
         id: 1,
-        title: "MSTC Written Test Result 2026",
-        link: "https://example.com/results",
-        date: "2026-06-28"
+        title: "DECT Research Associate Interview Results 2026",
+        link: "https://dectmeg.nic.in",
+        date: "2026-08-20"
     },
     {
         id: 2,
-        title: "SSC CGL Tier I Result 2025",
-        link: "https://ssc.nic.in/results",
-        date: "2026-06-25"
+        title: "MSTC Written Test Result 2026",
+        link: "https://example.com/results",
+        date: "2026-06-28"
     },
     {
         id: 3,
@@ -258,15 +262,15 @@ const sampleResults = [
 const sampleAdmitCards = [
     {
         id: 1,
-        title: "MSTC Main Exam Admit Card",
-        link: "https://example.com/admit",
-        date: "2026-06-27"
+        title: "DECT Technical Officer Interview Call Letter",
+        link: "https://dectmeg.nic.in",
+        date: "2026-11-05"
     },
     {
         id: 2,
-        title: "Civil Service Exam Admit Card",
-        link: "https://upsc.gov.in/admit",
-        date: "2026-07-01"
+        title: "MSTC Main Exam Admit Card",
+        link: "https://example.com/admit",
+        date: "2026-06-27"
     },
     {
         id: 3,
@@ -419,7 +423,7 @@ function viewJobDetails(jobId) {
         const modal = document.getElementById('jobDetailsModal');
         const content = document.getElementById('jobDetailsContent');
         
-        content.innerHTML = `
+        let detailsHTML = `
             <div class="job-details">
                 <div class="job-details-header">
                     <h1>${job.title}</h1>
@@ -472,7 +476,29 @@ function viewJobDetails(jobId) {
                     <h2>Selection Process</h2>
                     <p>${job.selectionProcess}</p>
                 </div>
-                
+        `;
+
+        // Add key requirements if available
+        if (job.keyRequirements) {
+            detailsHTML += `
+                <div class="job-details-section">
+                    <h2>Key Requirements</h2>
+                    <p>${job.keyRequirements}</p>
+                </div>
+            `;
+        }
+
+        // Add application mode if available
+        if (job.applicationMode) {
+            detailsHTML += `
+                <div class="job-details-section">
+                    <h2>Application Mode</h2>
+                    <p>${job.applicationMode}</p>
+                </div>
+            `;
+        }
+
+        detailsHTML += `
                 <div class="job-details-grid">
                     <div class="detail-item">
                         <h3>Exam Date</h3>
@@ -492,6 +518,7 @@ function viewJobDetails(jobId) {
             </div>
         `;
         
+        content.innerHTML = detailsHTML;
         modal.style.display = 'block';
     }
 }
