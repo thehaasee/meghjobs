@@ -16,7 +16,12 @@ const sampleJobs = [
         notificationPDF: "https://example.com/notification.pdf",
         featuredImage: "https://via.placeholder.com/400x200?text=Assistant+Manager+Finance",
         departmentLogo: "https://via.placeholder.com/80x80?text=MSTC",
-        isFeatured: true
+        isFeatured: true,
+        description: "Assistant Manager (Finance) position in Meghalaya State Civil Service. Candidates with Bachelor's degree in Commerce or Business Administration are invited to apply.",
+        eligibility: "Bachelor's degree in any stream, Age between 21-35 years",
+        selectionProcess: "Written Test followed by Interview",
+        examDate: "2026-08-15",
+        resultDate: "2026-09-10"
     },
     {
         id: 2,
@@ -34,7 +39,12 @@ const sampleJobs = [
         notificationPDF: "https://example.com/notification.pdf",
         featuredImage: "https://via.placeholder.com/400x200?text=Research+Officer",
         departmentLogo: "https://via.placeholder.com/80x80?text=MSIRD",
-        isFeatured: true
+        isFeatured: true,
+        description: "Research Officer position for research and policy development in rural areas of Meghalaya.",
+        eligibility: "Master's degree in Economics, Sociology, or related field",
+        selectionProcess: "Merit-based selection through interview",
+        examDate: "2026-08-20",
+        resultDate: "2026-09-05"
     },
     {
         id: 3,
@@ -52,7 +62,12 @@ const sampleJobs = [
         notificationPDF: "https://example.com/notification.pdf",
         featuredImage: "https://via.placeholder.com/400x200?text=SSC+CGL+Exam",
         departmentLogo: "https://via.placeholder.com/80x80?text=SSC",
-        isFeatured: true
+        isFeatured: true,
+        description: "SSC Combined Graduate Level Examination for recruitment to various posts in different government departments.",
+        eligibility: "Bachelor's degree or equivalent qualification",
+        selectionProcess: "Tier I (CBT), Tier II (CBT), Tier III (Descriptive), Tier IV (Skill/Computer test)",
+        examDate: "2026-09-01",
+        resultDate: "2026-11-15"
     },
     {
         id: 4,
@@ -70,7 +85,12 @@ const sampleJobs = [
         notificationPDF: "https://example.com/notification.pdf",
         featuredImage: "https://via.placeholder.com/400x200?text=RBI+Probationary+Officer",
         departmentLogo: "https://via.placeholder.com/80x80?text=RBI",
-        isFeatured: false
+        isFeatured: false,
+        description: "Reserve Bank of India invites applications for Probationary Officer positions across various departments.",
+        eligibility: "Bachelor's degree from recognized university with aggregate of 50% marks",
+        selectionProcess: "Preliminary Examination, Main Examination, Interview",
+        examDate: "2026-09-15",
+        resultDate: "2026-11-20"
     },
     {
         id: 5,
@@ -88,7 +108,12 @@ const sampleJobs = [
         notificationPDF: "https://example.com/notification.pdf",
         featuredImage: "https://via.placeholder.com/400x200?text=Software+Developer",
         departmentLogo: "https://via.placeholder.com/80x80?text=Tech+Solutions",
-        isFeatured: false
+        isFeatured: false,
+        description: "Tech Solutions Pvt Ltd is hiring experienced and fresher Software Developers for their Meghalaya office.",
+        eligibility: "B.Tech in Computer Science, IT, or related field with knowledge of Java, Python, or C++",
+        selectionProcess: "Technical Test followed by Interview",
+        examDate: "2026-08-05",
+        resultDate: "2026-08-12"
     },
     {
         id: 6,
@@ -106,7 +131,12 @@ const sampleJobs = [
         notificationPDF: "https://example.com/notification.pdf",
         featuredImage: "https://via.placeholder.com/400x200?text=Railway+Technician",
         departmentLogo: "https://via.placeholder.com/80x80?text=Railways",
-        isFeatured: false
+        isFeatured: false,
+        description: "Indian Railways is recruiting Technician Grade candidates for various technical positions across railway zones.",
+        eligibility: "ITI pass or Diploma with minimum 50% marks in relevant discipline",
+        selectionProcess: "CBT followed by Document Verification and Medical Examination",
+        examDate: "2026-09-10",
+        resultDate: "2026-10-30"
     },
     {
         id: 7,
@@ -124,7 +154,12 @@ const sampleJobs = [
         notificationPDF: "https://example.com/notification.pdf",
         featuredImage: "https://via.placeholder.com/400x200?text=Bank+Clerk",
         departmentLogo: "https://via.placeholder.com/80x80?text=SBI",
-        isFeatured: true
+        isFeatured: true,
+        description: "State Bank of India is recruiting Bank Clerks across all their branches including Meghalaya region.",
+        eligibility: "12th Pass from recognized board, Age between 20-28 years",
+        selectionProcess: "Preliminary Exam, Main Exam, and Language Test",
+        examDate: "2026-08-25",
+        resultDate: "2026-10-15"
     },
     {
         id: 8,
@@ -142,7 +177,12 @@ const sampleJobs = [
         notificationPDF: "https://example.com/notification.pdf",
         featuredImage: "https://via.placeholder.com/400x200?text=UPSC+CSE",
         departmentLogo: "https://via.placeholder.com/80x80?text=UPSC",
-        isFeatured: false
+        isFeatured: false,
+        description: "UPSC Civil Services Examination for recruitment to IAS, IFS, and other All India Services.",
+        eligibility: "Bachelor's degree in any stream from recognized university",
+        selectionProcess: "Preliminary Examination, Main Examination (9 papers), Interview",
+        examDate: "2026-10-02",
+        resultDate: "2027-05-20"
     },
     {
         id: 9,
@@ -160,7 +200,12 @@ const sampleJobs = [
         notificationPDF: "https://example.com/notification.pdf",
         featuredImage: "https://via.placeholder.com/400x200?text=Market+Research",
         departmentLogo: "https://via.placeholder.com/80x80?text=BAC",
-        isFeatured: false
+        isFeatured: false,
+        description: "Business Analytics Corp seeks Market Research Analysts to conduct market studies and analysis.",
+        eligibility: "Master's in Business Administration, Marketing, or Economics with 2+ years experience",
+        selectionProcess: "Written Test, Case Study Analysis, Interview",
+        examDate: "2026-08-10",
+        resultDate: "2026-08-20"
     },
     {
         id: 10,
@@ -178,7 +223,12 @@ const sampleJobs = [
         notificationPDF: "https://example.com/notification.pdf",
         featuredImage: "https://via.placeholder.com/400x200?text=Teaching+Staff",
         departmentLogo: "https://via.placeholder.com/80x80?text=MSBE",
-        isFeatured: false
+        isFeatured: false,
+        description: "Meghalaya State Board of Education is recruiting qualified teachers for high schools across the state.",
+        eligibility: "Bachelor's degree in relevant subject with B.Ed degree",
+        selectionProcess: "Merit-based selection through interview",
+        examDate: "2026-08-01",
+        resultDate: "2026-08-25"
     }
 ];
 
@@ -360,6 +410,106 @@ function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString('en-US', options);
 }
 
+// View job details in modal
+function viewJobDetails(jobId) {
+    const jobs = getJobs();
+    const job = jobs.find(j => j.id === jobId);
+    
+    if (job) {
+        const modal = document.getElementById('jobDetailsModal');
+        const content = document.getElementById('jobDetailsContent');
+        
+        content.innerHTML = `
+            <div class="job-details">
+                <div class="job-details-header">
+                    <h1>${job.title}</h1>
+                    <p class="department">${job.department}</p>
+                </div>
+                
+                <div class="job-details-grid">
+                    <div class="detail-item">
+                        <h3>Advertisement No.</h3>
+                        <p>${job.advNo}</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Category</h3>
+                        <p>${job.category}</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Total Vacancies</h3>
+                        <p>${job.vacancies}</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Salary Range</h3>
+                        <p>${job.salary}</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Age Limit</h3>
+                        <p>${job.ageLimit}</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Last Date to Apply</h3>
+                        <p>${formatDate(job.lastDate)}</p>
+                    </div>
+                </div>
+                
+                <div class="job-details-section">
+                    <h2>Description</h2>
+                    <p>${job.description}</p>
+                </div>
+                
+                <div class="job-details-section">
+                    <h2>Qualification Required</h2>
+                    <p>${job.qualification}</p>
+                </div>
+                
+                <div class="job-details-section">
+                    <h2>Eligibility Criteria</h2>
+                    <p>${job.eligibility}</p>
+                </div>
+                
+                <div class="job-details-section">
+                    <h2>Selection Process</h2>
+                    <p>${job.selectionProcess}</p>
+                </div>
+                
+                <div class="job-details-grid">
+                    <div class="detail-item">
+                        <h3>Exam Date</h3>
+                        <p>${formatDate(job.examDate)}</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Result Date</h3>
+                        <p>${formatDate(job.resultDate)}</p>
+                    </div>
+                </div>
+                
+                <div class="job-details-actions">
+                    <a href="${job.applyLink}" target="_blank" class="btn-apply">Apply Now</a>
+                    <a href="${job.notificationPDF}" target="_blank" class="btn-download">Download Notification</a>
+                    <a href="${job.officialWebsite}" target="_blank" class="btn-official">Official Website</a>
+                </div>
+            </div>
+        `;
+        
+        modal.style.display = 'block';
+    }
+}
+
+// Close job details modal
+function closeJobModal() {
+    const modal = document.getElementById('jobDetailsModal');
+    modal.style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('jobDetailsModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
 // Load all sections on page load
 function loadAllSections() {
     initializeData();
@@ -420,15 +570,6 @@ function filterByCategory(category) {
     document.getElementById('meghalayaGovJobs').innerHTML = '';
     document.getElementById('centralGovJobs').innerHTML = '';
     document.getElementById('privateJobs').innerHTML = '';
-}
-
-// View job details
-function viewJobDetails(jobId) {
-    const jobs = getJobs();
-    const job = jobs.find(j => j.id === jobId);
-    if (job) {
-        alert(`Job Details: ${job.title}\nDepartment: ${job.department}\nVacancies: ${job.vacancies}\nSalary: ${job.salary}\n\nLast Date: ${formatDate(job.lastDate)}\n\nClick Apply Now to visit the official website.`);
-    }
 }
 
 // Initialize on page load
